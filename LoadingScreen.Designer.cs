@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingScreen));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.LoadingBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProgressbarValue = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LoadingbarTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // LoadingBar
             // 
-            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(132, 479);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(393, 24);
-            this.progressBar1.TabIndex = 0;
+            this.LoadingBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.LoadingBar.Location = new System.Drawing.Point(132, 479);
+            this.LoadingBar.Name = "LoadingBar";
+            this.LoadingBar.Size = new System.Drawing.Size(393, 24);
+            this.LoadingBar.TabIndex = 0;
             // 
             // label1
             // 
@@ -55,16 +57,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Loading";
             // 
-            // label2
+            // lblProgressbarValue
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(340, 463);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "0%";
+            this.lblProgressbarValue.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblProgressbarValue.AutoSize = true;
+            this.lblProgressbarValue.ForeColor = System.Drawing.Color.White;
+            this.lblProgressbarValue.Location = new System.Drawing.Point(340, 463);
+            this.lblProgressbarValue.Name = "lblProgressbarValue";
+            this.lblProgressbarValue.Size = new System.Drawing.Size(21, 13);
+            this.lblProgressbarValue.TabIndex = 2;
+            this.lblProgressbarValue.Text = "0%";
             // 
             // pictureBox1
             // 
@@ -74,7 +76,10 @@
             this.pictureBox1.Size = new System.Drawing.Size(660, 428);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // LoadingbarTimer
+            // 
+            this.LoadingbarTimer.Tick += new System.EventHandler(this.LoadingbarTimer_Tick);
             // 
             // LoadingScreen
             // 
@@ -82,17 +87,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(684, 515);
-            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblProgressbarValue);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.LoadingBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biomarkt GmbH";
+            this.Load += new System.EventHandler(this.LoadingScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,10 +106,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar LoadingBar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProgressbarValue;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer LoadingbarTimer;
     }
 }
 
