@@ -25,6 +25,12 @@ namespace BiomarktGmbH
             if(loadingbarValue >= LoadingBar.Maximum)
             {
                 LoadingbarTimer.Stop();
+
+                MainMenu mainMenu = new MainMenu();
+
+                this.Hide();
+                mainMenu.Show();
+                
             }
         }
 

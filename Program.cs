@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BiomarktGmbH
@@ -16,7 +14,8 @@ namespace BiomarktGmbH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoadingScreen());
+            //Application.Run(new LoadingScreen());
+            Application.Run(new MainMenu());
         }
     }
 }
