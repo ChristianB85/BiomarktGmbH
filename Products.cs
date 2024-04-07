@@ -16,5 +16,25 @@ namespace BiomarktGmbH
         {
             InitializeComponent();
         }
+
+        private void btnProductSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProductEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProductClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProductDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
