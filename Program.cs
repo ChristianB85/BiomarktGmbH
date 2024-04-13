@@ -14,8 +14,7 @@ namespace BiomarktGmbH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoadingScreen());
-            Application.Run(new Products());
+            Application.Run(new LoadingScreen());
         }
     }
 }
