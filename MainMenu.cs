@@ -19,5 +19,13 @@ namespace BiomarktGmbH
             this.Hide();
 
         }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            Bill billScreen = new Bill();
+
+            billScreen.Show();
+            this.Hide();
+        }
     }
 }

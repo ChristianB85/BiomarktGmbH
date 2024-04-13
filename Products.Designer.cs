@@ -36,7 +36,7 @@
             this.lblCategorie = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.btnProductSave = new System.Windows.Forms.Button();
             this.btnProductEdit = new System.Windows.Forms.Button();
             this.btnProductClear = new System.Windows.Forms.Button();
@@ -123,23 +123,23 @@
             this.lblPrice.TabIndex = 6;
             this.lblPrice.Text = "Preis";
             // 
-            // comboBoxCategorie
+            // comboBoxCategory
             // 
-            this.comboBoxCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBoxCategorie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCategorie.ForeColor = System.Drawing.Color.White;
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.Items.AddRange(new object[] {
+            this.comboBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBoxCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Items.AddRange(new object[] {
             "Obst",
             "Gemüse",
             "Fleisch",
             "Fisch",
             "Drogerie",
             "Getränke"});
-            this.comboBoxCategorie.Location = new System.Drawing.Point(79, 128);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(369, 21);
-            this.comboBoxCategorie.TabIndex = 8;
+            this.comboBoxCategory.Location = new System.Drawing.Point(79, 128);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(369, 21);
+            this.comboBoxCategory.TabIndex = 8;
             // 
             // btnProductSave
             // 
@@ -161,7 +161,7 @@
             this.btnProductEdit.ForeColor = System.Drawing.Color.White;
             this.btnProductEdit.Location = new System.Drawing.Point(173, 249);
             this.btnProductEdit.Name = "btnProductEdit";
-            this.btnProductEdit.Size = new System.Drawing.Size(75, 27);
+            this.btnProductEdit.Size = new System.Drawing.Size(79, 27);
             this.btnProductEdit.TabIndex = 10;
             this.btnProductEdit.Text = "Bearbeiten";
             this.btnProductEdit.UseVisualStyleBackColor = false;
@@ -204,7 +204,9 @@
             this.ProductsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.ProductsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductsDGV.Location = new System.Drawing.Point(468, 23);
+            this.ProductsDGV.MultiSelect = false;
             this.ProductsDGV.Name = "ProductsDGV";
+            this.ProductsDGV.ReadOnly = true;
             this.ProductsDGV.RowHeadersVisible = false;
             this.ProductsDGV.RowHeadersWidth = 45;
             this.ProductsDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -212,8 +214,10 @@
             this.ProductsDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.ProductsDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.ProductsDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.ProductsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductsDGV.Size = new System.Drawing.Size(583, 253);
             this.ProductsDGV.TabIndex = 13;
+            this.ProductsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsDGV_CellContentClick);
             // 
             // Products
             // 
@@ -226,7 +230,7 @@
             this.Controls.Add(this.btnProductClear);
             this.Controls.Add(this.btnProductEdit);
             this.Controls.Add(this.btnProductSave);
-            this.Controls.Add(this.comboBoxCategorie);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblCategorie);
@@ -255,7 +259,7 @@
         private System.Windows.Forms.Label lblCategorie;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Button btnProductSave;
         private System.Windows.Forms.Button btnProductEdit;
         private System.Windows.Forms.Button btnProductClear;
